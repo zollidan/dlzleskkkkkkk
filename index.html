@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" color-mode="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dlzleskkkkkkk</title>
+    <script src="static/dark-toggle.js" defer></script>
+    <script src="static/fade-in.js" defer></script>
+    <script src="static/typing-effect.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="" />
+    <script>
+      // This code assumes a Light Mode default
+      if (
+        /* This condition checks whether the user has set a site preference for dark mode OR a OS-level preference for Dark Mode AND no site preference */
+        localStorage.getItem("color-mode") === "dark" ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches &&
+          !localStorage.getItem("color-mode"))
+      ) {
+        // if true, set the site to Dark Mode
+        document.documentElement.setAttribute("color-mode", "dark");
+      }
+    </script>
+    <link rel="stylesheet" href="static/index.css" />
+  </head>
+  <body>
+    <button class="color-mode__btn dark--hidden">
+      <span class="button_top">Dark Mode</span>
+    </button>
+    <button class="color-mode__btn light--hidden">
+      <span class="button_top">Light Mode</span>
+    </button>
+    <header>
+      <div class="header_wrapper">
+        <div class="logo_wrapper">
+          <a href="">dlzleskkkkkkk</a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="main_text_wrapper">
+        <p class="main_text typing-effect">Hello, World.</p>
+      </section>
+      <section></section>
+    </main>
+    <footer>
+      <div class="imgs_wrapper">
+        <img
+          src="public/425596670-693ca17e-96e9-45f4-9ac7-4c1abf7892a5.gif"
+          alt="bg-image"
+          class="main_image"
+        />
+        <img
+          src="public/tumblr_nplp2it19L1up42jgo6_500.gif"
+          alt="bg-image"
+          class="main_image"
+        />
+        <img
+          src="public/36b4c7db515b2f32c42478fb06020047-1.gif"
+          alt="bg-image"
+          class="main_image"
+        />
+        <img
+          src="public\tumblr_n0jo4w5Qpl1qhk04bo2_r1_400.webp"
+          alt="bg-image"
+          class="main_image"
+        />
+      </div>
+      <div class="rights_wrapper">
+        <p>
+          2025. All Rights Reserved.
+          <a href="https://github.com/zollidan">Stepan Fedosov</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

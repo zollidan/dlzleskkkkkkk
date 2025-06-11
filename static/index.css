@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+* {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "IBM Plex Mono", monospace;
+  color: var(--text);
+}
+
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body,
+.color-mode__btn,
+.main_text,
+footer {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+:root {
+  --button_radius: 0.75em;
+}
+
+:root[color-mode="light"] {
+  --background: #f0d3bc;
+  --text: #b7245c;
+  --link: royalblue;
+  --button-bg: #111;
+  --button-text: #efefef;
+  --bg-toggle-bnt: #111;
+  --font-toggle-bnt: #f0d3bc;
+  --footer-background: #b7245c;
+}
+
+:root[color-mode="dark"] {
+  --background: #242424;
+  --text: #f0d3bc;
+  --link: #66ccff;
+  --button-bg: #f0f0f0;
+  --button-text: #111;
+  --bg-toggle-bnt: #f0d3bc;
+  --font-toggle-bnt: #242424;
+  --footer-background: #f0d3bc;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+}
+
+.main_text_wrapper {
+  width: 100%;
+  position: relative;
+  height: calc(100vh - 50px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main_text {
+  width: 40vw;
+  color: var(--text);
+  line-height: 2rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+header {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo_wrapper {
+  font-weight: bold;
+}
+
+.navbar ul li {
+  display: inline;
+  padding: 0 10px 0 10px;
+}
+
+.navbar ul li a:hover {
+  color: var(--link);
+}
+
+.dark_toggle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+footer {
+  background-color: var(--footer-background);
+  height: auto;
+}
+
+.imgs_wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.imgs_wrapper img {
+  width: 100%;
+  height: auto;
+}
+
+.rights_wrapper p {
+  padding: 40px;
+  color: var(--background);
+}
+
+.rights_wrapper p a {
+  color: var(--background);
+  text-decoration: underline;
+}
+
+.color-mode__btn {
+  font-size: 17px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--button_radius);
+  background: var(--bg-toggle-bnt);
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.button_top {
+  display: block;
+  box-sizing: border-box;
+  border: 2px solid var(--bg-toggle-bnt);
+  border-radius: var(--button_radius);
+  padding: 0.75em 1.5em;
+  background: var(--font-toggle-bnt);
+  color: var(--bg-toggle-bnt);
+  transform: translateY(-0.2em);
+  transition: transform 0.1s ease;
+}
+
+.button_top:hover {
+  /* Pull the button upwards when hovered */
+  transform: translateY(-0.33em);
+}
+
+.button_top:active {
+  /* Push the button downwards when pressed */
+  transform: translateY(0);
+}
+
+/* Any element with the class "light--hidden" will be hidden when the site is set to Light Mode */
+:root[color-mode="light"] .light--hidden {
+  display: none;
+}
+
+/* Any element with the class "dark--hidden" will be hidden when the site is set to Dark Mode */
+:root[color-mode="dark"] .dark--hidden {
+  display: none;
+}
+
+.projects {
+  height: 100vh;
+  margin: 100px;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
